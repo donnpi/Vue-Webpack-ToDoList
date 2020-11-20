@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  computed:{
+  computed: {
     // vue-loader配置文件中，cssModules的运行机制
     // $style(){
     //   return{

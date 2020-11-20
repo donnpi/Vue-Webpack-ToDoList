@@ -12,7 +12,7 @@ const baseConfig = require('./webpack.config.base')
 let config
 
 const devServer = {
-    port: 8000,
+    port: 8080,
     host: '0.0.0.0',
     overlay: {
         errors: true,

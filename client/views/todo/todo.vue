@@ -1,6 +1,6 @@
 <template>
   <section class="real-app">
-    <input 
+    <input
     type="text"
     class="add-input"
     autofocus="autofocus"
@@ -23,53 +23,53 @@
 </template>
 
 <script>
-import Item from "./item.vue";
-import Tabs from "./tabs.vue";
-let id=0
+import Item from './item.vue'
+import Tabs from './tabs.vue'
+let id = 0
 export default {
-  data() {
+  data () {
     return {
       // 事项列表
-      todos:[],
+      todos: [],
       // 被选中tabs列表
-      filter:'all'
+      filter: 'all'
     }
   },
   components: {
     Item,
-    Tabs,
+    Tabs
   },
-  methods:{
-    addTodo(e){
-      if(e.target.value.trim()==='') return
+  methods: {
+    addTodo (e) {
+      if (e.target.value.trim() === '') return
       // 在第一行插入
       this.todos.unshift({
-        id:id++,
-        content:e.target.value.trim(),
+        id: id++,
+        content: e.target.value.trim(),
         // 任务状态
-        completed:false
+        completed: false
       })
-      e.target.value=''
+      e.target.value = ''
     },
-    deleteTodo(id){
-      this.todos.splice(this.todos.findIndex(todo=>todo.id===id ),1)
+    deleteTodo (id) {
+      this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
     },
     // 切换tabs的激活项
-    toggleFilter(state){
-      this.filter=state
+    toggleFilter (state) {
+      this.filter = state
     },
-    clearAllCompelted(){
-      this.todos=this.todos.filter(todo=>!todo.completed)
+    clearAllCompelted () {
+      this.todos = this.todos.filter(todo => !todo.completed)
     }
 
   },
-  computed:{
-    filteredTodos(){
-      if(this.filter==='all'){
+  computed: {
+    filteredTodos () {
+      if (this.filter === 'all') {
         return this.todos
-      }else{
-        const completed=this.filter==='active'? false:true
-      return this.todos.filter(todo=>todo.completed===completed)
+      } else {
+        const completed = this.filter !== 'active'
+        return this.todos.filter(todo => todo.completed === completed)
       }
     }
   }
@@ -101,5 +101,3 @@ export default {
   box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
 }
 </style>
-
-

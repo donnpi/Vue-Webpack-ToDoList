@@ -1,6 +1,6 @@
 <template>
   <div :class="['todo-item',todo.completed?'completed':'']">
-    <input 
+    <input
     type="checkbox"
     class="toggle"
     v-model="todo.completed"
@@ -13,18 +13,18 @@
 <script>
 export default {
   props: {
-    todo:{
-      type:Object,
-      required:true
+    todo: {
+      type: Object,
+      required: true
     }
   },
-  methods:{
-    deleteTodo(id){
-      this.$emit('del',this.todo.id)
+  methods: {
+    deleteTodo (id) {
+      this.$emit('del', this.todo.id)
     }
   }
-  
-};
+
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -98,5 +98,3 @@ export default {
   outline: none;
 }
 </style>
-
-

@@ -21,32 +21,32 @@ export default {
   props: {
     filter: {
       type: String,
-      required: true,
+      required: true
     },
     todos: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
-  data() {
+  data () {
     return {
-      states: ["all", "active", "completed"],
-    };
+      states: ['all', 'active', 'completed']
+    }
   },
   computed: {
-    unFinishedTodoLength() {
-      return this.todos.filter((todo) => !todo.completed).length;
-    },
+    unFinishedTodoLength () {
+      return this.todos.filter((todo) => !todo.completed).length
+    }
   },
-  methods:{
-    toggleFilter(state){
-      this.$emit('toggle',state)
+  methods: {
+    toggleFilter (state) {
+      this.$emit('toggle', state)
     },
-    clearAllCompleted(){
+    clearAllCompleted () {
       this.$emit('clearAllCompelted')
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -96,4 +96,3 @@ export default {
   }
 }
 </style>
-

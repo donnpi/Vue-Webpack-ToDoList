@@ -1,0 +1,20 @@
+// {
+//   "extends":"standard",
+//   "plugins": ["html"],
+//   "parserOptions": {
+//     "parser": "babel-eslint"
+// },
+// "extends": ["standard", "plugin:vue/recommended"]
+// }
+{
+  "extends": ["standard"],
+  "plugins" : [
+      "html"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+  }
+}
