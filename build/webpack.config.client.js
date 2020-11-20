@@ -12,7 +12,7 @@ const baseConfig = require('./webpack.config.base')
 let config
 
 const devServer = {
-    port: 8080,
+    port: 8000,
     host: '0.0.0.0',
     overlay: {
         errors: true,
@@ -38,7 +38,7 @@ if (isDev) {
             rules: [{
                 test: /\.styl/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
                     'css-loader',
                     {
                         loader: 'postcss-loader',
@@ -71,7 +71,7 @@ if (isDev) {
             rules: [{
                 test: /\.styl/,
                 use: ExtractPlugin.extract({
-                    fallback: 'style-loader',
+                    fallback: 'vue-style-loader',
                     use: [
                         'css-loader',
                         {
