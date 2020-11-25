@@ -1,0 +1,5 @@
+// import './instance'
+// import './lifeCycle'
+// import './data-binding'
+// import './computed'
+import './component'

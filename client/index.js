@@ -12,5 +12,5 @@ document.body.appendChild(root)
 new Vue({
   // render 渲染App
   render: (h) => h(App)
-  // mount 将App挂载到html节点上
+    // mount 将App挂载到html节点上
 }).$mount(root)
