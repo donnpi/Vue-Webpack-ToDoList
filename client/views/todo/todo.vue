@@ -27,6 +27,23 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
+  beforeRouteEnter(to, from, next) {
+    // 拿不到this
+    console.log('todo before enter')
+    next()
+  },
+  beforeRouteUpdate(to, from, next) {
+    // 路由更新时用
+    console.log('todo before update')
+    next()
+  },
+  beforeRouteLeave(to, from, next) {
+    // 比如表单页面离开前，询问用户是否离开
+    console.log('todo leave')
+    next()
+  },
+
+  props: ['id'],
   data () {
     return {
       // 事项列表
@@ -72,6 +89,9 @@ export default {
         return this.todos.filter(todo => todo.completed === completed)
       }
     }
+  },
+  mounted() {
+    console.log(this.id)
   }
 }
 </script>
