@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const ExtractPlugin = require('extract-text-webpack-plugin')
   // 合并webpack配置的工具
 const { merge } = require('webpack-merge')
+const VueClientPlugin=require('vue-server-renderer/client-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
   // 引入基础配置
@@ -12,7 +13,7 @@ const baseConfig = require('./webpack.config.base')
 let config
 
 const devServer = {
-  port: 8080,
+  port: 8000,
   host: '0.0.0.0',
   overlay: {
     errors: true
@@ -32,7 +33,8 @@ const defaultPlugins = [
   }),
   new HTMLPlugin({
     template: path.join(__dirname, 'template.html')
-  })
+  }),
+  new VueClientPlugin() // 用于服务端渲染
 ]
 
 if (isDev) {
@@ -69,7 +71,8 @@ if (isDev) {
       vendor: ['vue']
     },
     output: {
-      filename: '[name].[chunkhash:8].js'
+      filename: '[name].[chunkhash:8].js',
+      publicPath:'/public/'
     },
     module: {
       rules: [{

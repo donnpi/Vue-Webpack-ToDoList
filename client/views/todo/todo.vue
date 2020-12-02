@@ -27,6 +27,9 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
+  metaInfo: {
+    title: 'Tonz\'s Todo App'
+  },
   beforeRouteEnter(to, from, next) {
     // 拿不到this
     console.log('todo before enter')

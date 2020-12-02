@@ -6,9 +6,9 @@ const config = {
   target: 'web',
   entry: path.join(__dirname, '../client/index.js'),
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'bundle.js',
-    publicPath: '/public/'
+    path: path.join(__dirname, '../public'),
+    filename: 'bundle.[hash:8].js',
+    publicPath: 'http://127.0.0.1:8000/public/' // 把静态资源路径指定为完整的url，即便是在别的端口访问的服务，页面上请求到的静态资源标签还是带有该前缀，会访问到wepack-dev-server上，就可以正常访问了
   },
   module: {
     rules: [{

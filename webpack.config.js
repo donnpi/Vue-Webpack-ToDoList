@@ -85,7 +85,7 @@ if (isDev) {
   config.devtool = '#cheap-module-eval-source-map'
 
   config.devServer = {
-      port: 8080,
+      port: 8000,
       // 这么设置，本地可通过localhost或127.0.0.1访问，也可以通过本机的内网ip访问
       host: '0.0.0.0',
       overlay: {
