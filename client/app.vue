@@ -4,13 +4,13 @@
     <!--   <Todo></Todo> -->
     <!-- <p>{{fullName}}{{counter}}</p> -->
     <!-- <p>{{textA}} {{textPlus}}</p> -->
-    <router-link to="/app">app</router-link>
-    <router-link to="/login">login</router-link>
+    <!-- <router-link to="/app">app</router-link>
+    <router-link to="/login">login</router-link> -->
     <!-- 过度动画 -->
     <transition name="fade">
       <router-view />
     </transition>
-      <!-- <router-view name="a" />  -->
+    <Notifications content="text text"/>
     <Footer></Footer>
   </div>
 </template>
@@ -27,12 +27,14 @@ import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
 
 export default {
+  metaInfo: {
+    title: 'Tonz\'s Todo App'
+  },
   components: {
     Header,
     Footer
   },
   mounted() {
-    console.log(this.$route)
     console.log(this.$store) // 指向在应用入口传入的store对象
     this.updateCountAsync({ num: 5, time: 2000 })
     // let i = 1

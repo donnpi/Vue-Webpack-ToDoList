@@ -1,24 +1,24 @@
 <template>
   <section class="real-app">
     <input
-    type="text"
-    class="add-input"
-    autofocus="autofocus"
-    placeholder="接下来要做什么呢？"
-    @keyup.enter="addTodo"
-    >
-   <item
-   v-for="todo in filteredTodos"
-   :key="todo.id"
-   :todo="todo"
-   @del="deleteTodo"
-   />
-   <tabs
-   :filter="filter"
-   :todos="todos"
-   @toggle="toggleFilter"
-   @clearAllCompelted="clearAllCompelted"
-   />
+      type="text"
+      class="add-input"
+      autofocus="autofocus"
+      placeholder="接下来要做什么呢？"
+      @keyup.enter="addTodo"
+    />
+    <item
+      v-for="todo in filteredTodos"
+      :key="todo.id"
+      :todo="todo"
+      @del="deleteTodo"
+    />
+    <tabs
+      :filter="filter"
+      :todos="todos"
+      @toggle="toggleFilter"
+      @clearAllCompelted="clearAllCompelted"
+    />
   </section>
 </template>
 
@@ -27,17 +27,20 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
-  beforeRouteEnter(to, from, next) {
+  metaInfo: {
+    title: 'Tonz\'s Todo App'
+  },
+  beforeRouteEnter (to, from, next) {
     // 拿不到this
     console.log('todo before enter')
     next()
   },
-  beforeRouteUpdate(to, from, next) {
+  beforeRouteUpdate (to, from, next) {
     // 路由更新时用
     console.log('todo before update')
     next()
   },
-  beforeRouteLeave(to, from, next) {
+  beforeRouteLeave (to, from, next) {
     // 比如表单页面离开前，询问用户是否离开
     console.log('todo leave')
     next()
@@ -90,7 +93,7 @@ export default {
       }
     }
   },
-  mounted() {
+  mounted () {
     console.log(this.id)
   }
 }
