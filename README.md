@@ -1,5 +1,6 @@
 
 # 项目搭建文档(每步代码配置带有详细注释)
+[项目预览](http://tonzvue.free.idcfengye.com/)
 
 ### 1.1 项目基本配置
 

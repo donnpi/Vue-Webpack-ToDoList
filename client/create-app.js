@@ -8,15 +8,21 @@ import Meta from 'vue-meta'
 import App from './app.vue'
 import createStore from './store/store'
 import createRouter from './config/router'
+<<<<<<< HEAD
 import Notification from './components/notification'
+=======
+>>>>>>> b0548a53e591e7e71878f9e35ad7e6eccdbf5c94
 
 import './assets/styles/global.styl'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Meta)
+<<<<<<< HEAD
 Vue.use(Notification)
 console.log('hhjkf')
+=======
+>>>>>>> b0548a53e591e7e71878f9e35ad7e6eccdbf5c94
 
 // 每次调用该方法，都会返回一批新的对象，防止应用在node端内存溢出
 export default () => {

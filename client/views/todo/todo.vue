@@ -30,7 +30,11 @@ export default {
   metaInfo: {
     title: 'Tonz\'s Todo App'
   },
+<<<<<<< HEAD
   beforeRouteEnter (to, from, next) {
+=======
+  beforeRouteEnter(to, from, next) {
+>>>>>>> b0548a53e591e7e71878f9e35ad7e6eccdbf5c94
     // 拿不到this
     console.log('todo before enter')
     next()
